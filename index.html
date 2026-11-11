@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f2eee6">
+  <meta name="description" content="Dozze Tattoo: tatuagem e piercing em Poços de Caldas. Conheça o estúdio e agende seu horário pelo WhatsApp.">
+  <title>Dozze Tattoo — Sua próxima história começa na pele</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f2eee6;
+      --ink: #1c211d;
+      --muted: #65665e;
+      --red: #d54b35;
+      --green: #293d32;
+      --line: rgba(28, 33, 29, .18);
+      --display: "Oswald", Impact, sans-serif;
+      --body: "DM Sans", sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--body); }
+    button, input, select, textarea { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    a { color: inherit; }
+    .shell { width: min(1180px, calc(100% - 64px)); margin-inline: auto; }
+    .topline { border-bottom: 1px solid var(--line); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; }
+    .topline-inner { min-height: 38px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .topline a { text-decoration: none; }
+    .topline .open { color: var(--green); display: inline-flex; align-items: center; gap: 8px; }
+    .dot { width: 7px; height: 7px; background: #68895a; border-radius: 50%; display: inline-block; }
+    header { border-bottom: 1px solid var(--line); }
+    .nav { min-height: 82px; display: flex; align-items: center; justify-content: space-between; gap: 30px; }
+    .brand { display: inline-flex; align-items: center; gap: 11px; border: 0; padding: 0; background: none; color: var(--ink); cursor: pointer; text-align: left; }
+    .brand-mark { width: 40px; height: 40px; display: grid; place-items: center; background: var(--red); color: var(--paper); font: 700 24px var(--display); transform: rotate(-4deg); }
+    .brand-name { font: 700 21px var(--display); letter-spacing: 1px; line-height: 1; text-transform: uppercase; }
+    .brand-name small { display: block; margin-top: 5px; color: var(--muted); font: 600 9px var(--body); letter-spacing: 2px; }
+    .tabs { align-self: stretch; display: flex; align-items: stretch; gap: 34px; }
+    .tab { position: relative; border: 0; padding: 0 2px; background: transparent; color: var(--muted); font-size: 13px; font-weight: 600; cursor: pointer; }
+    .tab::after { position: absolute; right: 0; bottom: -1px; left: 0; height: 3px; background: var(--red); content: ""; transform: scaleX(0); transform-origin: left; transition: transform .2s ease; }
+    .tab[aria-selected="true"] { color: var(--ink); }
+    .tab[aria-selected="true"]::after { transform: scaleX(1); }
+    .nav-cta, .button { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 46px; border: 1px solid var(--ink); padding: 0 18px; background: var(--ink); color: var(--paper); font-size: 12px; font-weight: 700; letter-spacing: .3px; text-decoration: none; cursor: pointer; transition: background .2s, color .2s, transform .2s; }
+    .nav-cta:hover, .button:hover { background: var(--red); border-color: var(--red); transform: translateY(-2px); }
+    .button-light { background: transparent; color: var(--ink); }
+    .button-light:hover { color: #fff; }
+    main { min-height: 66vh; }
+    [hidden] { display: none !important; }
+    .hero { display: grid; grid-template-columns: 1.03fr .97fr; gap: 48px; align-items: center; padding-block: 62px 68px; }
+    .eyebrow { display: flex; align-items: center; gap: 10px; color: var(--red); font-size: 11px; font-weight: 700; letter-spacing: 1.7px; text-transform: uppercase; }
+    .eyebrow::before { width: 26px; height: 2px; background: var(--red); content: ""; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { max-width: 650px; margin: 20px 0 19px; font: 600 clamp(56px, 7.2vw, 94px)/.98 var(--display); letter-spacing: 0; text-transform: uppercase; }
+    h1 span { color: var(--red); }
+    .hero-copy { max-width: 470px; color: var(--muted); font-size: 15px; line-height: 1.8; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 11px; margin-top: 27px; }
+    .rating { display: flex; align-items: center; gap: 13px; margin-top: 34px; }
+    .stars { color: var(--red); font-size: 15px; letter-spacing: 2px; }
+    .rating-copy { font-size: 12px; line-height: 1.5; }
+    .rating-copy strong { font-size: 13px; }
+    .hero-visual { position: relative; min-height: 475px; background: var(--green); overflow: hidden; }
+    .hero-visual img { width: 100%; height: 475px; display: block; object-fit: cover; object-position: center 43%; filter: saturate(.78); }
+    .image-caption { position: absolute; right: 0; bottom: 0; left: 0; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 21px 23px; background: linear-gradient(transparent, rgba(0,0,0,.8)); color: white; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; }
+    .image-caption strong { font: 600 20px var(--display); letter-spacing: .5px; }
+    .image-index { position: absolute; top: 16px; left: 16px; padding: 8px 10px; background: var(--paper); color: var(--ink); font-size: 10px; font-weight: 700; letter-spacing: 1px; }
+    .ticker { overflow: hidden; background: var(--red); color: var(--paper); }
+    .ticker-inner { min-height: 54px; display: flex; align-items: center; justify-content: space-between; gap: 24px; font: 500 17px var(--display); letter-spacing: 1px; text-transform: uppercase; white-space: nowrap; }
+    .ticker-inner span::after { content: "  /  ✳  /  "; padding-left: 24px; color: rgba(255,255,255,.66); }
+    .intro-strip { display: grid; grid-template-columns: 1fr 1fr 1fr; border-bottom: 1px solid var(--line); }
+    .intro-item { min-height: 122px; display: flex; flex-direction: column; justify-content: center; padding: 18px 26px; border-right: 1px solid var(--line); }
+    .intro-item:first-child { padding-left: 0; }
+    .intro-item:last-child { border-right: 0; }
+    .intro-item strong { font: 600 24px var(--display); text-transform: uppercase; }
+    .intro-item span { margin-top: 5px; color: var(--muted); font-size: 12px; }
+    .panel-heading { display: flex; justify-content: space-between; align-items: end; gap: 24px; padding-block: 54px 25px; }
+    .panel-heading h1 { margin: 12px 0 0; font-size: clamp(45px, 6vw, 72px); }
+    .panel-heading p { max-width: 390px; margin-bottom: 3px; color: var(--muted); font-size: 13px; line-height: 1.7; }
+    .gallery { display: grid; grid-template-columns: 1.1fr .9fr; gap: 14px; padding-bottom: 64px; }
+    .gallery figure { position: relative; min-height: 420px; margin: 0; overflow: hidden; background: var(--green); }
+    .gallery figure:first-child img { height: 480px; }
+    .gallery figure:nth-child(2) img { height: 480px; }
+    .gallery img { width: 100%; display: block; object-fit: cover; transition: transform .5s; }
+    .gallery figure:hover img { transform: scale(1.025); }
+    .gallery figcaption { position: absolute; right: 0; bottom: 0; left: 0; padding: 45px 20px 18px; background: linear-gradient(transparent, rgba(0,0,0,.75)); color: white; font-size: 12px; }
+    .booking-layout { display: grid; grid-template-columns: .8fr 1.2fr; gap: 72px; padding-block: 58px 76px; }
+    .booking-intro h1 { margin: 14px 0 17px; font-size: clamp(48px, 6vw, 74px); }
+    .booking-intro > p { max-width: 350px; color: var(--muted); font-size: 14px; line-height: 1.8; }
+    .booking-note { margin-top: 31px; border-top: 1px solid var(--line); padding-top: 18px; color: var(--muted); font-size: 12px; line-height: 1.8; }
+    .booking-note strong { color: var(--ink); }
+    .form { display: grid; grid-template-columns: 1fr 1fr; gap: 17px 14px; }
+    .field { display: flex; flex-direction: column; gap: 8px; }
+    .field.full { grid-column: 1 / -1; }
+    .field label { font-size: 11px; font-weight: 700; letter-spacing: .65px; text-transform: uppercase; }
+    .field input, .field select, .field textarea { width: 100%; min-height: 48px; border: 1px solid var(--line); border-radius: 0; padding: 12px; background: rgba(255,255,255,.38); color: var(--ink); outline: none; }
+    .field textarea { min-height: 90px; resize: vertical; }
+    .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--red); box-shadow: 0 0 0 2px rgba(213,75,53,.13); }
+    .form .button { grid-column: 1 / -1; margin-top: 3px; }
+    .form-feedback { grid-column: 1 / -1; min-height: 20px; margin: -7px 0 0; color: var(--red); font-size: 12px; }
+    .contact-band { background: var(--green); color: var(--paper); }
+    .contact-inner { display: grid; grid-template-columns: 1.2fr 1fr 1fr; align-items: center; gap: 30px; min-height: 180px; }
+    .contact-inner h2 { margin: 0; font: 600 32px/1.1 var(--display); text-transform: uppercase; }
+    .contact-block { font-size: 12px; line-height: 1.8; }
+    .contact-block strong { display: block; margin-bottom: 4px; color: #e7836d; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; }
+    .contact-block a { text-decoration: none; }
+    footer { border-top: 1px solid rgba(255,255,255,.17); background: var(--green); color: var(--paper); }
+    .footer-inner { min-height: 58px; display: flex; justify-content: space-between; align-items: center; gap: 20px; color: rgba(242,238,230,.65); font-size: 10px; }
+    .footer-inner a { color: inherit; }
+    @media (max-width: 760px) {
+      .shell { width: min(100% - 36px, 560px); }
+      .topline-inner { min-height: 34px; font-size: 9px; letter-spacing: 1px; }
+      .nav { min-height: 72px; flex-wrap: wrap; gap: 0; padding-top: 13px; }
+      .brand-mark { width: 35px; height: 35px; font-size: 21px; }
+      .brand-name { font-size: 18px; }
+      .nav-cta { min-height: 38px; padding-inline: 12px; font-size: 10px; }
+      .tabs { order: 2; width: 100%; height: 47px; justify-content: space-between; gap: 10px; }
+      .tab { font-size: 12px; }
+      .hero { grid-template-columns: 1fr; gap: 30px; padding-block: 43px 40px; }
+      h1 { max-width: 490px; font-size: clamp(57px, 16vw, 78px); }
+      .hero-copy { font-size: 14px; }
+      .hero-visual, .hero-visual img { min-height: 0; height: 390px; }
+      .ticker-inner { min-height: 47px; justify-content: flex-start; gap: 22px; font-size: 15px; }
+      .ticker-inner span:nth-child(3) { display: none; }
+      .intro-item { min-height: 100px; padding: 12px; }
+      .intro-item strong { font-size: 19px; }
+      .intro-item span { font-size: 10px; line-height: 1.5; }
+      .panel-heading { display: block; padding-block: 40px 20px; }
+      .panel-heading h1 { font-size: 55px; }
+      .panel-heading p { margin-top: 14px; }
+      .gallery { grid-template-columns: 1fr; gap: 12px; padding-bottom: 42px; }
+      .gallery figure, .gallery figure:first-child img, .gallery figure:nth-child(2) img { min-height: 0; height: 370px; }
+      .booking-layout { grid-template-columns: 1fr; gap: 27px; padding-block: 40px 48px; }
+      .booking-intro h1 { max-width: 430px; font-size: 58px; }
+      .booking-note { margin-top: 20px; }
+      .contact-inner { grid-template-columns: 1fr 1fr; gap: 20px; padding-block: 27px; }
+      .contact-inner h2 { grid-column: 1 / -1; font-size: 28px; }
+      .footer-inner { align-items: flex-start; flex-direction: column; justify-content: center; gap: 5px; min-height: 59px; }
+    }
+    @media (max-width: 400px) {
+      .shell { width: calc(100% - 28px); }
+      .brand-name { font-size: 16px; }
+      .nav-cta { padding-inline: 9px; }
+      .tab { font-size: 11px; }
+      .hero-visual, .hero-visual img { height: 330px; }
+      .form { grid-template-columns: 1fr; }
+      .field.full, .form .button, .form-feedback { grid-column: 1; }
+      .contact-inner { grid-template-columns: 1fr; }
+      .contact-inner h2 { grid-column: 1; }
+    }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; } }
+  </style>
+</head>
+<body>
+  <div class="topline">
+    <div class="shell topline-inner">
+      <span class="open"><i class="dot" aria-hidden="true"></i> Poços de Caldas, MG</span>
+      <a href="tel:+5535988160042">(35) 98816-0042</a>
+    </div>
+  </div>
+  <header>
+    <div class="shell nav">
+      <button class="brand" type="button" data-tab="inicio" aria-label="Dozze Tattoo, início">
+        <span class="brand-mark" aria-hidden="true">D</span>
+        <span class="brand-name">Dozze Tattoo<small>TATUAGEM &amp; PIERCING</small></span>
+      </button>
+      <nav class="tabs" role="tablist" aria-label="Navegação principal">
+        <button class="tab" type="button" role="tab" id="tab-inicio" aria-controls="inicio" aria-selected="true" data-tab="inicio">O estúdio</button>
+        <button class="tab" type="button" role="tab" id="tab-fotos" aria-controls="fotos" aria-selected="false" data-tab="fotos">Fotos</button>
+        <button class="tab" type="button" role="tab" id="tab-agendar" aria-controls="agendar" aria-selected="false" data-tab="agendar">Agendamento</button>
+      </nav>
+      <button class="nav-cta" type="button" data-tab="agendar">✳ &nbsp;Agende seu horário</button>
+    </div>
+  </header>
+  <main class="shell">
+    <section id="inicio" role="tabpanel" aria-labelledby="tab-inicio">
+      <div class="hero">
+        <div>
+          <div class="eyebrow">Arte que fica com você</div>
+          <h1>Sua próxima história começa <span>na pele.</span></h1>
+          <p class="hero-copy">Tatuagem e piercing em Poços de Caldas, com atendimento próximo e atenção a cada detalhe. Sua ideia merece virar arte.</p>
+          <div class="hero-actions">
+            <button class="button" type="button" data-tab="agendar">Agendar pelo WhatsApp <span aria-hidden="true">↗</span></button>
+            <button class="button button-light" type="button" data-tab="fotos">Conheça o estúdio</button>
+          </div>
+          <div class="rating" aria-label="Nota 5 de 5, baseada em 7 avaliações">
+            <span class="stars" aria-hidden="true">★★★★★</span>
+            <span class="rating-copy"><strong>5,0 no Google</strong><br>7 avaliações de clientes</span>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <span class="image-index">01 / DOZZE</span>
+          <img src="https://lh3.googleusercontent.com/grass-cs/AABkmLeNrAdhixOS9Skmy_qCZfvaHbgZTZC3m-X0gySxzASFLRlNyVvh0ELxqpFUjWMLhoJFTdb7j-h4xtZnTbAkJ_IxdvWvknj00Ou_AwaAQb0ID4vj7cfXcoAM_DDM_Zhlq9aKqhr2uA=w408-h725-k-no" alt="Foto do estúdio Dozze Tattoo, em Poços de Caldas" fetchpriority="high">
+          <div class="image-caption"><strong>Dozze Tattoo</strong><span>Centro · Poços de Caldas</span></div>
+        </div>
+      </div>
+      <div class="ticker" aria-hidden="true"><div class="shell ticker-inner"><span>Tatuagem</span><span>Piercing</span><span>Arte autoral</span></div></div>
+      <div class="intro-strip">
+        <div class="intro-item"><strong>5,0 ★</strong><span>Avaliação no Google</span></div>
+        <div class="intro-item"><strong>Do seu jeito</strong><span>Atendimento para sua ideia</span></div>
+        <div class="intro-item"><strong>No centro</strong><span>Poços de Caldas, MG</span></div>
+      </div>
+      <div class="panel-heading">
+        <div><div class="eyebrow">Quem já passou por aqui</div><h2 style="margin:12px 0 0;font:600 clamp(35px,5vw,54px)/1.05 var(--display);text-transform:uppercase">Palavra de cliente</h2></div>
+        <p>“Tattoo top!!! Profissionais excepcionais e materiais top, fora a destreza da arte que não tem para ninguém!!!!”<br><strong>André Romeiro · Avaliação no Google</strong></p>
+      </div>
+    </section>
+    <section id="fotos" role="tabpanel" aria-labelledby="tab-fotos" hidden>
+      <div class="panel-heading">
+        <div><div class="eyebrow">Por dentro da Dozze</div><h1>O estúdio</h1></div>
+        <p>Imagens do perfil do estúdio no Google Maps. Visite a Dozze Tattoo no Centro de Poços de Caldas.</p>
+      </div>
+      <div class="gallery">
+        <figure><img src="https://lh3.googleusercontent.com/grass-cs/AABkmLeNrAdhixOS9Skmy_qCZfvaHbgZTZC3m-X0gySxzASFLRlNyVvh0ELxqpFUjWMLhoJFTdb7j-h4xtZnTbAkJ_IxdvWvknj00Ou_AwaAQb0ID4vj7cfXcoAM_DDM_Zhlq9aKqhr2uA=w408-h725-k-no" alt="Foto original do perfil Dozze Tattoo no Google Maps" loading="lazy"><figcaption>Dozze Tattoo · foto do perfil no Google Maps</figcaption></figure>
+        <figure><img src="https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=F0Rke_N_06pFML9nPFtO9A&cb_client=maps_sv.tactile.gps&w=224&h=298&yaw=16.38721&pitch=0&thumbfov=100" alt="Vista da rua do estúdio Dozze Tattoo no Google Street View" loading="lazy"><figcaption>Por perto · Google Street View</figcaption></figure>
+      </div>
+    </section>
+    <section id="agendar" role="tabpanel" aria-labelledby="tab-agendar" hidden>
+      <div class="booking-layout">
+        <div class="booking-intro">
+          <div class="eyebrow">Vamos tirar a ideia do papel</div>
+          <h1>Agende seu horário.</h1>
+          <p>Conte um pouco do que você tem em mente. A equipe confirma os detalhes e a disponibilidade direto com você pelo WhatsApp.</p>
+          <div class="booking-note"><strong>Atendimento</strong><br>R. Paraíba, 485 · Centro<br>Poços de Caldas, MG · CEP 37701-022<br><br><strong>Contato</strong><br><a href="tel:+5535988160042">(35) 98816-0042</a></div>
+        </div>
+        <form class="form" id="booking-form">
+          <div class="field"><label for="nome">Seu nome</label><input id="nome" name="nome" type="text" autocomplete="name" placeholder="Como podemos te chamar?" required></div>
+          <div class="field"><label for="telefone">Seu WhatsApp</label><input id="telefone" name="telefone" type="tel" autocomplete="tel" placeholder="(35) 99999-9999" required></div>
+          <div class="field"><label for="servico">O que você quer fazer?</label><select id="servico" name="servico" required><option value="" disabled selected>Selecione</option><option>Tatuagem</option><option>Piercing</option><option>Conversa sobre uma ideia</option></select></div>
+          <div class="field"><label for="data">Data desejada</label><input id="data" name="data" type="date" required></div>
+          <div class="field"><label for="horario">Período preferido</label><select id="horario" name="horario" required><option value="" disabled selected>Selecione</option><option>Manhã</option><option>Tarde</option><option>Tenho flexibilidade</option></select></div>
+          <div class="field full"><label for="ideia">Conte um pouco da sua ideia</label><textarea id="ideia" name="ideia" placeholder="Local do corpo, tamanho aproximado ou outras informações"></textarea></div>
+          <button class="button" type="submit">Continuar pelo WhatsApp <span aria-hidden="true">↗</span></button>
+          <p class="form-feedback" id="form-feedback" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+  <section class="contact-band">
+    <div class="shell contact-inner">
+      <h2>Uma ideia boa<br>merece virar pele.</h2>
+      <div class="contact-block"><strong>Encontre a gente</strong><a href="https://maps.google.com/?q=R.+Para%C3%ADba,+485,+Centro,+Po%C3%A7os+de+Caldas+-+MG" target="_blank" rel="noreferrer">R. Paraíba, 485 · Centro<br>Poços de Caldas, MG</a></div>
+      <div class="contact-block"><strong>Fale com o estúdio</strong><a href="https://wa.me/5535988160042" target="_blank" rel="noreferrer">WhatsApp · (35) 98816-0042</a><br><a href="tel:+5535988160042">Ligar para o estúdio</a></div>
+    </div>
+  </section>
+  <footer><div class="shell footer-inner"><span>© <span id="year"></span> Dozze Tattoo · Poços de Caldas, MG</span><span>Imagens do perfil do estúdio no Google Maps</span></div></footer>
+  <script>
+    const tabs = [...document.querySelectorAll('[role="tab"]')];
+    const panels = [...document.querySelectorAll('[role="tabpanel"]')];
+
+    function showTab(name) {
+      tabs.forEach((tab) => {
+        const selected = tab.dataset.tab === name;
+        tab.setAttribute('aria-selected', String(selected));
+        tab.tabIndex = selected ? 0 : -1;
+      });
+      panels.forEach((panel) => { panel.hidden = panel.id !== name; });
+      history.replaceState(null, '', `#${name}`);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    document.querySelectorAll('[data-tab]').forEach((control) => {
+      control.addEventListener('click', () => showTab(control.dataset.tab));
+    });
+    tabs.forEach((tab, index) => {
+      tab.addEventListener('keydown', (event) => {
+        if (event.key !== 'ArrowRight' && event.key !== 'ArrowLeft') return;
+        event.preventDefault();
+        const direction = event.key === 'ArrowRight' ? 1 : -1;
+        const nextTab = tabs[(index + direction + tabs.length) % tabs.length];
+        showTab(nextTab.dataset.tab);
+        nextTab.focus();
+      });
+    });
+
+    const dateField = document.querySelector('#data');
+    const today = new Date();
+    dateField.min = new Date(today.getTime() - today.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
+    document.querySelector('#year').textContent = today.getFullYear();
+    const initialTab = location.hash.slice(1);
+    if (['inicio', 'fotos', 'agendar'].includes(initialTab)) showTab(initialTab);
+
+    document.querySelector('#booking-form').addEventListener('submit', (event) => {
+      event.preventDefault();
+      const form = event.currentTarget;
+      if (!form.reportValidity()) return;
+      const values = new FormData(form);
+      const date = new Date(`${values.get('data')}T12:00:00`).toLocaleDateString('pt-BR');
+      const message = [
+        'Oi, Dozze Tattoo! Gostaria de agendar um atendimento.',
+        '',
+        `Nome: ${values.get('nome')}`,
+        `Meu WhatsApp: ${values.get('telefone')}`,
+        `Serviço: ${values.get('servico')}`,
+        `Data desejada: ${date}`,
+        `Período: ${values.get('horario')}`,
+        values.get('ideia') ? `Minha ideia: ${values.get('ideia')}` : ''
+      ].filter(Boolean).join('\n');
+      document.querySelector('#form-feedback').textContent = 'Abrindo o WhatsApp para você confirmar o pedido de horário.';
+      window.open(`https://wa.me/5535988160042?text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer');
+    });
+  </script>
+</body>
+</html>
